@@ -1,0 +1,13 @@
+language: node_js
+before_script:
+  - gem install bourbon
+  - rake devbuild
+  - npm install -g gulp
+  - npm install
+cache:
+  directories:
+    - node_modules 
+script: 
+  - gulp sass
+  - gulp jade
+  - gulp compile-js
