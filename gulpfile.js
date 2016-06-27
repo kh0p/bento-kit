@@ -95,14 +95,13 @@ gulp.task('jade', function () {
 });
 
 
-// Currently not using coffe
-//gulp.task('coffee', function () {
-//  gulp.src(['./src/coffee/*.coffee','./src/coffee/**/_*.coffee'])
-//    .pipe(plumber())
-//    .pipe(coffee({ bare: true }))
-//    .on('error', console.error.bind(console))
-//    .pipe(gulp.dest('./src/js/'))
-//});
+gulp.task('coffee', function () {
+  gulp.src(['./src/coffee/*.coffee','./src/coffee/**/_*.coffee'])
+    .pipe(plumber())
+    .pipe(coffee({ bare: true }))
+    .on('error', console.error.bind(console))
+    .pipe(gulp.dest('./src/js/'))
+});
 
 
 gulp.task('compile-js',function () {
@@ -126,7 +125,6 @@ gulp.task('clean', function(cb) {
   del(['./_site/**/*.html','./_site/**/*.css','./_site/**/*.xml'], cb);
 });
 
-// ['clean'] の後サイトマップはうまく出力されない。タイミングの問題だろうけど特に使うこと無かったからこのまま
 gulp.task('deproy',['clean'],function(cb) {
   runSequence(
     ['sass:deproy','jade'],
