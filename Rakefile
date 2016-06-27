@@ -5,6 +5,7 @@ task :default => [:install]
 
 # Configuration
 dep = [
+  "es6-promise",
   "browser-sync",
   "del",
   "gulp",
