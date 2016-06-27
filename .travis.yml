@@ -2,6 +2,7 @@ language: node_js
 before_script:
   - gem install bourbon
   - rake devbuild
+  - rake package:builddep
   - npm install -g gulp
   - npm install gulp
   - npm install
