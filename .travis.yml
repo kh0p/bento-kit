@@ -3,6 +3,7 @@ before_script:
   - gem install bourbon
   - rake devbuild
   - npm install -g gulp
+  - npm install gulp
   - npm install
 cache:
   directories:
